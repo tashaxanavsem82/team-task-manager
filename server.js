@@ -10,6 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 // Error handling middleware
+// This middleware catches errors from previous middleware and returns a 500 status with a message.
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Something broke!');
